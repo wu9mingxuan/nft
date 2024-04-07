@@ -3,7 +3,7 @@
 
 <script src="./aframe-master.min.js"></script>
 <script src="./aframe-ar-nft.js"></script>
-
+<script src="./gesture.js"></script>
 <style>
   .arjs-loader {
     height: 100%;
@@ -21,7 +21,7 @@
   .arjs-loader div {
     text-align: center;
     font-size: 1.25em;
-    color: #ff00d0;
+    color: #00fff2;
   }
 </style>
 
@@ -30,24 +30,29 @@
 <body style='margin : 0px; overflow: hidden;'>
    <!-- minimal loader shown until image descriptors are loaded -->
   <div class="arjs-loader">
-    <div>please wait..</div>
+    <div>just wait a moment..</div>
   </div>
 <div id="ar-container" style="position: relative; width: 800px; height: 600px;">
     <a-scene
         vr-mode-ui='enabled: false;'
         renderer="logarithmicDepthBuffer: true; precision: medium;"
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'
-        style="width: 100%; height: 100%;">
+        style="width: 100%; height: 100%;"
+	gesture-detector id="scene">
         <!-- use rawgithack to retrieve the correct url for nft marker (see 'trex' below) -->
         <a-nft
             type='nft' url="https://raw.githubusercontent.com/wu9mingxuan/nft/master/trex/trex-image/p35model6-1/p35model6-1"
-            smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+            smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'
+	    raycaster="objects: .Main"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;">
             <a-entity
                 gltf-model="https://raw.githubusercontent.com/wu9mingxuan/nft/master//trex/p35model6-1.gltf"
                 scale="2 2 2"
                 position="30 -50 -150"
                 rotation="-90 0 0"
-		class="Main"    
+		class="Main"
+		gesture-handler="minScale: 0.25; maxScale: 10"
                 >
             </a-entity>
 	    <a-entity
@@ -127,22 +132,30 @@ z-index: 9999;
 bottom: 0;  
 left: 75%;  
 transform: translateX(-50%); ">LeftView</button>
+
+<button id="GestureButton" style="position: absolute; 
+z-index: 9999; 
+bottom: 30;  
+left: 75%;  
+transform: translateX(-50%); ">Gesture</button>
     <script>  
     // 获取按钮元素  
   const MainViewButton = document.getElementById('MainViewButton');
   const TopViewButton = document.getElementById('TopViewButton');  
   const LeftViewButton = document.getElementById('LeftViewButton');    
-    
+  const GestureButton = document.getElementById('GestureButton'); 
     // 获取所有的a-entity元素
     const Mainentities = document.querySelectorAll('.Main');
     const Topentities = document.querySelectorAll('.Top');
     const Leftentities = document.querySelectorAll('.Left');   
       
+	    
     Mainentities.forEach(entity => {  
-      entity.setAttribute('visible', true);  
+      entity.setAttribute('visible', true);
+      entity.setAttribute('gesture-handler',"enabled: false; minScale: 0.25; maxScale: 10");
     });  //默认主视图出现
     Topentities.forEach(entity => {  
-        entity.setAttribute('visible', false);  
+        entity.setAttribute('visible', false);
       });  
       Leftentities.forEach(entity => {  
         entity.setAttribute('visible', false);  
@@ -182,5 +195,17 @@ transform: translateX(-50%); ">LeftView</button>
         entity.setAttribute('visible', true);  
       });  
     });  //左视图按钮
+      GestureButton.addEventListener('click', function() {  
+      Mainentities.forEach(entity => {  
+        entity.setAttribute('visible', true);
+        entity.setAttribute('gesture-handler',"enabled: ture; minScale: 0.25; maxScale: 10");  
+      });  
+      Topentities.forEach(entity => {  
+        entity.setAttribute('visible', false);  
+      });  
+      Leftentities.forEach(entity => {  
+        entity.setAttribute('visible', false);  
+      });  
+    });  //手势按钮
     </script>
 </body>
