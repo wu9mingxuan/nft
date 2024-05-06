@@ -762,9 +762,51 @@
 		{
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
-					0.792157,
-					0.819608,
-					0.933333,
+					0.039216,
+					0.490196,
+					0.709804,
+					1.000000
+				],
+				"roughnessFactor":0.500000,
+				"metallicFactor":0.250000
+			},
+			"doubleSided":true,
+			"name":""
+		},
+		{
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1.000000,
+					0.549020,
+					0.000000,
+					1.000000
+				],
+				"roughnessFactor":0.500000,
+				"metallicFactor":0.250000
+			},
+			"doubleSided":true,
+			"name":""
+		},
+		{
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1.000000,
+					1.000000,
+					0.000000,
+					1.000000
+				],
+				"roughnessFactor":0.500000,
+				"metallicFactor":0.250000
+			},
+			"doubleSided":true,
+			"name":""
+		},
+		{
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1.000000,
+					0.168627,
+					0.168627,
 					1.000000
 				],
 				"roughnessFactor":0.500000,
@@ -788,7 +830,7 @@
 			},
 			{
 			"indices":3,
-			"material":0,
+			"material":1,
 			"mode":4,
 				"attributes":{
 					"POSITION":4,
@@ -797,7 +839,7 @@
 			},
 			{
 			"indices":6,
-			"material":0,
+			"material":2,
 			"mode":4,
 				"attributes":{
 					"POSITION":7,
@@ -806,7 +848,7 @@
 			},
 			{
 			"indices":9,
-			"material":0,
+			"material":2,
 			"mode":4,
 				"attributes":{
 					"POSITION":10,
@@ -815,7 +857,7 @@
 			},
 			{
 			"indices":12,
-			"material":0,
+			"material":1,
 			"mode":4,
 				"attributes":{
 					"POSITION":13,
@@ -824,7 +866,7 @@
 			},
 			{
 			"indices":15,
-			"material":0,
+			"material":3,
 			"mode":4,
 				"attributes":{
 					"POSITION":16,
@@ -833,7 +875,7 @@
 			},
 			{
 			"indices":18,
-			"material":0,
+			"material":3,
 			"mode":4,
 				"attributes":{
 					"POSITION":19,
@@ -842,7 +884,7 @@
 			},
 			{
 			"indices":21,
-			"material":0,
+			"material":3,
 			"mode":4,
 				"attributes":{
 					"POSITION":22,
@@ -851,7 +893,7 @@
 			},
 			{
 			"indices":24,
-			"material":0,
+			"material":3,
 			"mode":4,
 				"attributes":{
 					"POSITION":25,
@@ -924,7 +966,7 @@
 			},
 			{
 			"indices":43,
-			"material":0,
+			"material":2,
 			"mode":4,
 				"attributes":{
 					"POSITION":44
@@ -932,7 +974,7 @@
 			},
 			{
 			"indices":45,
-			"material":0,
+			"material":2,
 			"mode":4,
 				"attributes":{
 					"POSITION":46
