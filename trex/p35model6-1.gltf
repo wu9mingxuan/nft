@@ -617,9 +617,23 @@
 		{
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
-					0.792157,
-					0.819608,
-					0.933333,
+					0.039216,
+					0.490196,
+					0.709804,
+					1.000000
+				],
+				"roughnessFactor":0.500000,
+				"metallicFactor":0.250000
+			},
+			"doubleSided":true,
+			"name":""
+		},
+		{
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1.000000,
+					0.168627,
+					0.168627,
 					1.000000
 				],
 				"roughnessFactor":0.500000,
@@ -634,7 +648,7 @@
 		"primitives":[
 			{
 			"indices":0,
-			"material":0,
+			"material":1,
 			"mode":4,
 				"attributes":{
 					"POSITION":1,
@@ -643,7 +657,7 @@
 			},
 			{
 			"indices":3,
-			"material":0,
+			"material":1,
 			"mode":4,
 				"attributes":{
 					"POSITION":4,
@@ -661,7 +675,7 @@
 			},
 			{
 			"indices":9,
-			"material":0,
+			"material":1,
 			"mode":4,
 				"attributes":{
 					"POSITION":10,
